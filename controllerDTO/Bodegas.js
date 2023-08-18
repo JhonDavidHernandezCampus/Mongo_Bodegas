@@ -21,7 +21,7 @@ export class Bodegas {
     constructor(data) {
         Object.assign(this, data);
         this.id = 1,
-            this.nombre = "jhon",
+            this.nombre = "nombre",
             this.id_responsable = 1,
             this.estado = 1;
     }
