@@ -56,7 +56,6 @@ JWVerify.use(async(req,res,next)=>{
             res.status(498).send({status:498,Message:"Token caducado o contaminado"});
         }
     } catch (error) {
-        
     }
 });
 

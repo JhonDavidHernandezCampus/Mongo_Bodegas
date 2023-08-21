@@ -1,36 +1,41 @@
-use("dbCampusBodegas");
 
+use("dbCampusBodegas");
+// db.bodegas.drop();
+// db.historiales.drop();
+// db.inventarios.drop();
+// db.productos.drop();
+// db.users.drop();
 //Creacion he insercion de data para users
 use("dbCampusBodegas");
-db.createCollection('users',{
-    validator:{
-        $jsonSchema:{
-            bsonType:"object",
-            required:["id","nombre","email","email_verified_at","estado","passport"],
-            properties:{
-                id:{
-                    bsonType:"int",
-                    description:"Error en el tipo de dato id"
+db.createCollection('users', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id", "nombre", "email", "email_verified_at", "estado", "passport"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "Error en el tipo de dato id"
                 },
-                nombre:{
-                    bsonType:"string",
-                    description:"El Tipo de dato de Nombre es incorrecto"
+                nombre: {
+                    bsonType: "string",
+                    description: "El Tipo de dato de Nombre es incorrecto"
                 },
-                email:{
-                    bsonType:'string',
-                    description:"El Tipo de dato de email es incorrecto"
+                email: {
+                    bsonType: 'string',
+                    description: "El Tipo de dato de email es incorrecto"
                 },
-                email_verified_at:{
-                    bsonType:"date",
-                    description:"El Tipo de dato de email_verified es incorrecto"
+                email_verified_at: {
+                    bsonType: "date",
+                    description: "El Tipo de dato de email_verified es incorrecto"
                 },
-                estado:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de estado es incorrecto"
+                estado: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de estado es incorrecto"
                 },
-                passport:{
-                    bsonType:"string",
-                    description:"El Tipo de dato de passport es incorrecto"
+                passport: {
+                    bsonType: "string",
+                    description: "El Tipo de dato de passport es incorrecto"
                 }
             }
         }
@@ -39,302 +44,372 @@ db.createCollection('users',{
 use("dbCampusBodegas");
 db.users.insertMany([
     {
-        id:1,
-        nombre:"carlos",
-        email:"carlos@gmil.com",
+        id: 1,
+        nombre: "carlos 1",
+        email: "carlos@gmil.com",
         email_verified_at: new Date("2020-12-12"),
-        estado:1,
-        passport:"jhon1123123"
+        estado: 1,
+        passport: "jhon1123123"
     },
     {
-        id:2,
-        nombre:"carlos",
-        email:"carlos@gmil.com",
+        id: 2,
+        nombre: "carlos 2",
+        email: "carlos@gmil.com",
         email_verified_at: new Date("2020-12-12"),
-        estado:1,
-        passport:"jhon1123123"
+        estado: 1,
+        passport: "jhon1123123"
     },
     {
-        id:3,
-        nombre:"carlos",
-        email:"carlos@gmil.com",
+        id: 3,
+        nombre: "carlos 3",
+        email: "carlos@gmil.com",
         email_verified_at: new Date("2020-12-12"),
-        estado:1,
-        passport:"jhon1123123"
+        estado: 1,
+        passport: "jhon1123123"
     },
     {
-        id:4,
-        nombre:"carlos",
-        email:"carlos@gmil.com",
+        id: 4,
+        nombre: "carlos 4",
+        email: "carlos@gmil.com",
         email_verified_at: new Date("2020-12-12"),
-        estado:1,
-        passport:"jhon1123123"
+        estado: 1,
+        passport: "jhon1123123"
     },
     {
-        id:5,
-        nombre:"carlos",
-        email:"carlos@gmil.com",
+        id: 5,
+        nombre: "carlos 5",
+        email: "carlos@gmil.com",
         email_verified_at: new Date("2020-12-12"),
-        estado:1,
-        passport:"jhon1123123"
+        estado: 1,
+        passport: "jhon1123123"
     },
 ]);
 
 //Creacion he insercion de data para productos
 use("dbCampusBodegas");
-db.createCollection('productos',{
-    validator:{
-        $jsonSchema:{
-            bsonType:"object",
-            required:["id","nombre","descripcion","estado"],
-            properties:{
-                id:{
-                    bsonType:"int",
-                    description:"Error en el tipo de dato id"
+db.createCollection('productos', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id", "nombre", "descripcion", "estado"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "Error en el tipo de dato id"
                 },
-                nombre:{
-                    bsonType:"string",
-                    description:"El Tipo de dato de nombre es incorrecto"
+                nombre: {
+                    bsonType: "string",
+                    description: "El Tipo de dato de nombre es incorrecto"
                 },
-                descripcion:{
-                    bsonType:'string',
-                    description:"El Tipo de dato de descripcion es incorrecto"
+                descripcion: {
+                    bsonType: 'string',
+                    description: "El Tipo de dato de descripcion es incorrecto"
                 },
-                estado:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de estado es incorrecto"
+                estado: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de estado es incorrecto"
                 }
             }
-        }   
+        }
     }
 });
 use("dbCampusBodegas");
 db.productos.insertMany([
     {
-        id:1,
-        nombre:"carlos",
-        descripcion:"carlos@gmil.com",
+        id: 1,
+        nombre: "producto 1",
+        descripcion: "el mejor producto 1",
         estado: 1,
     },
     {
-        id:2,
-        nombre:"carlos",
-        descripcion:"carlos@gmil.com",
+        id: 2,
+        nombre: "producto 2",
+        descripcion: "el mejor producto 2",
         estado: 1,
     },
     {
-        id:3,
-        nombre:"carlos",
-        descripcion:"carlos@gmil.com",
+        id: 3,
+        nombre: "producto 3",
+        descripcion: "el mejor producto 3",
         estado: 1,
     },
     {
-        id:4,
-        nombre:"carlos",
-        descripcion:"carlos@gmil.com",
+        id: 4,
+        nombre: "producto 4",
+        descripcion: "el mejor producto 4",
         estado: 1,
     },
     {
-        id:5,
-        nombre:"carlos",
-        descripcion:"carlos@gmil.com",
+        id: 5,
+        nombre: "producto 5",
+        descripcion: "el mejor producto 5",
         estado: 1,
     }
 ]);
 
 //Creacion he insercion de data para inventarios
 use("dbCampusBodegas");
-db.createCollection('inventarios',{
-    validator:{
-        $jsonSchema:{
-            bsonType:"object",
-            required:["id","id_bodega","id_producto","cantidad"],
-            properties:{
-                id:{
-                    bsonType:"int",
-                    description:"Error en el tipo de dato id"
+db.createCollection('inventarios', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id", "id_bodega", "id_producto", "cantidad"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "Error en el tipo de dato id"
                 },
-                id_bodega:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de id_bodega es incorrecto"
+                id_bodega: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de id_bodega es incorrecto"
                 },
-                id_producto:{
-                    bsonType:'int',
-                    description:"El Tipo de dato de id_producto es incorrecto"
+                id_producto: {
+                    bsonType: 'int',
+                    description: "El Tipo de dato de id_producto es incorrecto"
                 },
-                cantidad:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de cantidad es incorrecto"
+                cantidad: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de cantidad es incorrecto"
                 }
             }
-        }   
+        }
     }
 });
 use("dbCampusBodegas");
 db.inventarios.insertMany([
     {
-        id:1,
-        id_bodega:1,
-        id_producto:1,
+        id: 1,
+        id_bodega: 1,
+        id_producto: 1,
         cantidad: 1,
     },
     {
-        id:2,
-        id_bodega:2,
-        id_producto:2,
+        id: 2,
+        id_bodega: 2,
+        id_producto: 2,
         cantidad: 2,
     },
     {
-        id:3,
-        id_bodega:3,
-        id_producto:3,
+        id: 3,
+        id_bodega: 3,
+        id_producto: 3,
         cantidad: 3,
     },
     {
-        id:4,
-        id_bodega:4,
-        id_producto:4,
+        id: 4,
+        id_bodega: 4,
+        id_producto: 4,
         cantidad: 4,
     },
     {
-        id:5,
-        id_bodega:5,
-        id_producto:5,
+        id: 5,
+        id_bodega: 5,
+        id_producto: 5,
         cantidad: 5,
     }
 ]);
 
-//Creacion he insercion de data para inventarios
+//Creacion he insercion de data para bodegas
 use("dbCampusBodegas");
-db.createCollection('bodegas',{
-    validator:{
-        $jsonSchema:{
-            bsonType:"object",
-            required:["id","nombre","id_responsable","estado"],
-            properties:{
-                id:{
-                    bsonType:"int",
-                    description:"Error en el tipo de dato id"
+db.createCollection('bodegas', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id", "nombre", "id_responsable", "estado"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "Error en el tipo de dato id"
                 },
-                nombre:{
-                    bsonType:"string",
-                    description:"El Tipo de dato de nombre es incorrecto"
+                nombre: {
+                    bsonType: "string",
+                    description: "El Tipo de dato de nombre es incorrecto"
                 },
-                id_responsable:{
-                    bsonType:'int',
-                    description:"El Tipo de dato de id_responsable es incorrecto"
+                id_responsable: {
+                    bsonType: 'int',
+                    description: "El Tipo de dato de id_responsable es incorrecto"
                 },
-                estado:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de estado es incorrecto"
+                estado: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de estado es incorrecto"
                 }
             }
-        }   
+        }
     }
 });
 use("dbCampusBodegas");
 db.bodegas.insertMany([
     {
-        id:1,
-        nombre:"el mejor producto 1",
-        id_responsable:1,
+        id: 1,
+        nombre: "bodega 1",
+        id_responsable: 1,
         estado: 1,
     },
     {
-        id:2,
-        nombre:"el mejor producto 2",
-        id_responsable:2,
+        id: 2,
+        nombre: "bodega 2",
+        id_responsable: 2,
         estado: 2,
     },
     {
-        id:3,
-        nombre:"el mejor producto 3",
-        id_responsable:3,
+        id: 3,
+        nombre: "bodega 3",
+        id_responsable: 3,
         estado: 3,
     },
     {
-        id:4,
-        nombre:"el mejor producto 4",
-        id_responsable:4,
+        id: 4,
+        nombre: "bodega 4",
+        id_responsable: 4,
         estado: 4,
     },
     {
-        id:5,
-        nombre:"el mejor producto 5",
-        id_responsable:5,
+        id: 5,
+        nombre: "bodega 5",
+        id_responsable: 5,
         estado: 5,
     }
 ]);
 
-//Creacion he insercion de data para inventarios
+//Creacion he insercion de data para historiales
 use("dbCampusBodegas");
-db.createCollection('historiales',{
-    validator:{
-        $jsonSchema:{
-            bsonType:"object",
-            required:["id","cantidad","id_bodega_origen","id_bodega_destino", "id_inventario"],
-            properties:{
-                id:{
-                    bsonType:"int",
-                    description:"Error en el tipo de dato id"
+db.createCollection('historiales', {
+    validator: {
+        $jsonSchema: {
+            bsonType: "object",
+            required: ["id", "cantidad", "id_bodega_origen", "id_bodega_destino", "id_inventario"],
+            properties: {
+                id: {
+                    bsonType: "int",
+                    description: "Error en el tipo de dato id"
                 },
-                cantidad:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de cantidad es incorrecto"
+                cantidad: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de cantidad es incorrecto"
                 },
-                id_bodega_origen:{
-                    bsonType:'int',
-                    description:"El Tipo de dato de id_bodega_origen es incorrecto"
+                id_bodega_origen: {
+                    bsonType: 'int',
+                    description: "El Tipo de dato de id_bodega_origen es incorrecto"
                 },
-                id_bodega_destino:{
-                    bsonType:"int",
-                    description:"El Tipo de dato de id_bodega_destino es incorrecto"
+                id_bodega_destino: {
+                    bsonType: "int",
+                    description: "El Tipo de dato de id_bodega_destino es incorrecto"
                 },
-                id_inventario:{
-                    bsonType:"int",
-                    description:"El tipo de dato de id_inventario es incorrecto"
+                id_inventario: {
+                    bsonType: "int",
+                    description: "El tipo de dato de id_inventario es incorrecto"
                 }
             }
-        }   
+        }
     }
 });
 use("dbCampusBodegas");
 db.historiales.insertMany([
     {
-        id:1,
-        cantidad:1,
-        id_bodega_origen:1,
+        id: 1,
+        cantidad: 1,
+        id_bodega_origen: 1,
         id_bodega_destino: 1,
-        id_inventario:1
+        id_inventario: 1
     },
     {
-        id:2,
-        cantidad:2,
-        id_bodega_origen:2,
+        id: 2,
+        cantidad: 2,
+        id_bodega_origen: 2,
         id_bodega_destino: 2,
-        id_inventario:2
-    },{
-        id:3,
-        cantidad:3,
-        id_bodega_origen:3,
+        id_inventario: 2
+    }, {
+        id: 3,
+        cantidad: 3,
+        id_bodega_origen: 3,
         id_bodega_destino: 3,
-        id_inventario:3
-    },{
-        id:4,
-        cantidad:4,
-        id_bodega_origen:4,
+        id_inventario: 3
+    }, {
+        id: 4,
+        cantidad: 4,
+        id_bodega_origen: 4,
         id_bodega_destino: 4,
-        id_inventario:4
-    },{
-        id:5,
-        cantidad:5,
-        id_bodega_origen:5,
+        id_inventario: 4
+    }, {
+        id: 5,
+        cantidad: 5,
+        id_bodega_origen: 5,
         id_bodega_destino: 5,
-        id_inventario:5
+        id_inventario: 5
     },
 ]);
 
 use("dbCampusBodegas");
 db.users.find();
 
+// Maquetacion de consultas
 
+// 6. Realizar un EndPoint que permita listar todos los productos en orden
+// descendente por el campo "Total".
+// • El campo "Total" es la cantidad de unidades que la empresa tiene
+// de este producto, considerando la unión de todas las bodegas, es
+// decir que el dato como tal no existe en la base de datos,sino se debe
+// calcular. Si la Bodega A tiene 1O unidades, la Bodega B tiene 5
+// unidades y la Bodega C tiene 3 unidades. Total= 18.
+
+use("dbCampusBodegas");
+db.getCollection('productos').aggregate([
+    {
+        $lookup: {
+            from: 'inventarios',
+            localField: 'id',
+            foreignField: 'id_producto',
+            as: 'FK_Inventarios'
+        }
+    },
+    {
+        $lookup: {
+            from: 'bodegas',
+            localField: 'FK_Inventarios.id_bodega',
+            foreignField: 'id',
+            as: "FK_Bodegas"
+        }
+    },
+    {
+        $unwind: "$FK_Inventarios"
+    },
+    {
+        $unwind: "$FK_Bodegas"
+    },
+    {
+        $group: {
+            _id: "$id",
+            producto: { $first: "$nombre" },
+            nombre_bodega:{ $first: "$FK_Bodegas.nombre" },
+            Total_Producto: { $sum: '$FK_Inventarios.cantidad' }
+        }
+    },
+    {
+        $sort: { Total_Producto: -1 }
+    }
+]);
+
+use("dbCampusBodegas");
+db.productos.aggregate([
+    {
+        $lookup: {
+            from: "inventarios",
+            localField: "id",
+            foreignField: "id_producto",
+            as: "inventarios"
+        }
+    },
+    {
+        $unwind: "$inventarios"
+    },
+    {
+        $group: {
+            _id: "$id",
+            producto: { $first: "$nombre" },
+            total: { $sum: "$inventarios.cantidad" }
+        }
+    },
+    {
+        $sort: { total: -1 }
+    }
+]);

@@ -19,11 +19,9 @@ ClassVerify.use((req,res,next)=>{
 DTOData.use(async (req,res,next)=>{
     try {
         let clase = req.baseUrl.slice(1);
-        console.log(req.body);
         let data = plainToClass(DTO(clase).instans,req.body);
-        console.log(data);
         await validate(data);
-        req.body = JSON.stringify(classToPlain(data));
+        req.body = classToPlain(data);
         req.data = undefined;
         next();
     } catch (error) {
