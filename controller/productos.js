@@ -9,6 +9,8 @@ import { ClassVerify,DTOData } from './../middleware/verifyData.js';
 const router = express.Router();
 let db = await conx();
 const productos = db.collection("productos");
+const inventarios = db.collection("inventarios");
+
 
 router.get('/cantidad',limit(), ClassVerify,async (req,res)=>{
     try {
@@ -56,11 +58,30 @@ router.get('/cantidad',limit(), ClassVerify,async (req,res)=>{
 //7. Realizar un EndPoint que permita insertar un productos y a su vez asigne
 //una cantidad inicial del mismo en la tabla inventarios en una de las bodegas
 //por default.
-//
-router.post('/insertar', limit(), DTOData, async()=>{
+/* 
+* Ejemplo de data a enviar
+{
+    "id":1,
+    "nombre":"peperoni",
+    "descripcion":"El mejor peperoni",
+    "estado":1,
+}
+*/
+router.post('/insertar', limit(), DTOData, async(req,res)=>{
     try {
-        
+        let idrandon = Math.floor(Math.random() * (1000 - 0 + 1)) + 0;
+        // * console.log(idrandon);
+        let result = await productos.insertOne(req.body);
+        let asignar = await inventarios.insertOne({
+                id: idrandon,
+                id_bodega: 1,
+                id_producto: req.body.id,
+                cantidad: 10
+        })
+        console.log(result, asignar);
+        if(result.acknowledged && asignar.acknowledged) res.send({ status: 200, message: "La data se ha insertado correctamente", data: result });
     } catch (error) {
+        res.status(404).send({ status: 404, message: "Error al insertar la data", error: error });
         
     }
 });

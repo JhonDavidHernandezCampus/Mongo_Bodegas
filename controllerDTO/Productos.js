@@ -9,6 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 import { Expose } from "class-transformer";
 import { IsDefined } from "class-validator";
+/*
+{
+    "id":1,
+    "nombre":"peperoni",
+    "descripcion":"El mejor peperoni",
+    "estado":1
+}
+
+*/
 export class Productos {
     constructor(data) {
         Object.assign(this, data);
@@ -20,21 +29,21 @@ export class Productos {
 }
 __decorate([
     Expose({ name: "id" }),
-    IsDefined({ message: () => { throw { status: 422, message: "el parametro id  no debe ser obligatorio" }; } }),
+    IsDefined({ message: () => { throw { status: 422, message: "el parametro id  debe ser obligatorio" }; } }),
     __metadata("design:type", Number)
 ], Productos.prototype, "id", void 0);
 __decorate([
     Expose({ name: "nombre" }),
-    IsDefined({ message: () => { throw { status: 422, message: "el parametro nombre  no debe ser obligatorio" }; } }),
+    IsDefined({ message: () => { throw { status: 422, message: "el parametro nombre debe ser obligatorio" }; } }),
     __metadata("design:type", String)
 ], Productos.prototype, "nombre", void 0);
 __decorate([
     Expose({ name: "descripcion" }),
-    IsDefined({ message: () => { throw { status: 422, message: "el parametro descripcion  no debe ser obligatorio" }; } }),
+    IsDefined({ message: () => { throw { status: 422, message: "el parametro descripcion debe ser obligatorio" }; } }),
     __metadata("design:type", String)
 ], Productos.prototype, "descripcion", void 0);
 __decorate([
     Expose({ name: "estado" }),
-    IsDefined({ message: () => { throw { status: 422, message: "el parametro estado  no debe ser obligatorio" }; } }),
+    IsDefined({ message: () => { throw { status: 422, message: "el parametro estado debe ser obligatorio" }; } }),
     __metadata("design:type", Number)
 ], Productos.prototype, "estado", void 0);

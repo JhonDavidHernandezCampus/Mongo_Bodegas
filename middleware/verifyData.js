@@ -13,6 +13,7 @@ ClassVerify.use((req,res,next)=>{
     let { iat,exp, ...newpayload } = req.data.payload;
     const payload = newpayload;
     let claseActual = JSON.stringify(classToPlain(plainToClass(DTO(clase).instans,{},{ignoreDecorators:true})));
+    console.log("pasa");
     if(!(claseActual === JSON.stringify(payload))) res.status(400).send({status:400, message:"Sin permisos para hacer este tramite"}); else next()
 });
 

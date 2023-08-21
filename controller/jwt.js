@@ -4,6 +4,7 @@ import { SignJWT, jwtVerify } from 'jose';
 import { limit } from './../middleware/limit.js';
 import { Bodegas } from './../controllerDTO/Bodegas.js';
 import { Productos } from './../controllerDTO/Productos.js';
+import { Inventario } from './../controllerDTO/inventario.js';
 import dotenv from 'dotenv';
 import Express  from 'express';
 
@@ -15,7 +16,8 @@ const JWVerify = Express();
 const DTO = (collection)=>{
     const instances = {
         'Bodegas': Bodegas,
-        'Productos': Productos
+        'Productos': Productos,
+        'Inventarios':Inventario
     }
     let instancia = instances[collection];
     if(!instancia) throw { status: 504, message: "El token que desea solicitar no es valido"};

@@ -343,7 +343,13 @@ use("dbCampusBodegas");
 db.users.find();
 
 // Maquetacion de consultas
-
+use("dbCampusBodegas");
+db.inventarios.find({
+        $and:[
+            {"id_producto": 1},
+            {"id_bodega":1}
+        ]
+});
 // 6. Realizar un EndPoint que permita listar todos los productos en orden
 // descendente por el campo "Total".
 // • El campo "Total" es la cantidad de unidades que la empresa tiene
