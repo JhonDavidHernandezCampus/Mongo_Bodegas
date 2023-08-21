@@ -3,14 +3,14 @@ import { IsDefined } from "class-validator";
 
 /* 
     {
-        id_bodega:1,
-        nombre:"Jhon",
-        id_responsable:1,
-        estado:1
+        "id":1,
+        "nombre":"Jhon",
+        "id_responsable":1,
+        "estado":1
     }
 */
 export class Bodegas{
-    @Expose({ name: 'id_bodega'})
+    @Expose({ name: 'id'})
     @IsDefined({message: ()=>{throw { status:422, message:`El id de la bodega no cumple con los parametros`}}})
     id:number
     

@@ -5,7 +5,7 @@ dotenv.config();
 export async function conx(){
     try {
         const uri = `mongodb+srv://${process.env.USUARIO}:${process.env.PASSWORD}@dbcampusbodegas.stvfqug.mongodb.net/${process.env.NAMEDATABASE}`;
-        console.log(uri);
+        // * console.log(uri);
         const option = {
             useNewUrlParser:true,
             useUnifiedTopology:true
