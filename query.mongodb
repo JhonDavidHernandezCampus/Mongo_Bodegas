@@ -419,3 +419,20 @@ db.productos.aggregate([
         $sort: { total: -1 }
     }
 ]);
+
+use("dbCampusBodegas");
+db.bodegas.find({"id":{$eq :1}}).toArray();
+
+
+use("dbCampusBodegas");
+db.inventarios.find({
+    $or:[
+        {"id_bodega":1},
+        {"id_bodega":2},
+    ],
+    $and:[
+        {"id_producto":1},
+    ]
+});
+
+
