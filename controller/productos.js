@@ -3,14 +3,14 @@ import { conx } from './../db/db.js';
 import  { limit } from './../middleware/limit.js';
 import { ClassVerify,DTOData } from './../middleware/verifyData.js';
 
-//6.  Realizar un EndPoint que permita listar todos los productos en orden
-// descendente por el campo "Total".
-// http://127.1.1.1:5312/Productos/cantidad
 const router = express.Router();
 let db = await conx();
 const productos = db.collection("productos");
 const inventarios = db.collection("inventarios");
 
+//6.  Realizar un EndPoint que permita listar todos los productos en orden
+// descendente por el campo "Total".
+// http://127.1.1.1:5312/Productos/cantidad
 
 router.get('/cantidad',limit(), ClassVerify,async (req,res)=>{
     try {
@@ -67,6 +67,8 @@ router.get('/cantidad',limit(), ClassVerify,async (req,res)=>{
     "estado":1,
 }
 */
+// http://127.1.1.1:5312/Productos/insertar
+
 router.post('/insertar', limit(), DTOData, async(req,res)=>{
     try {
         let idrandon = Math.floor(Math.random() * (1000 - 0 + 1)) + 0;

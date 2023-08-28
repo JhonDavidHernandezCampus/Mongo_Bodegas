@@ -9,6 +9,7 @@ const bodegas = db.collection("bodegas");
 
 // 4. Realizar un EndPolnt que permita listar 
 // todas las bodegas ordenadasalfabéticamente.
+
 router.get('/orden', limit(), ClassVerify, async (req, res) => {
     try {
         let ressult = await bodegas.find().sort({ nombre: 1 }).toArray();

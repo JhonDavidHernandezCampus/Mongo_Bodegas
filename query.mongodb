@@ -1,4 +1,4 @@
-
+        
 use("dbCampusBodegas");
 // db.bodegas.drop();
 // db.historiales.drop();

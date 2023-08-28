@@ -35,6 +35,7 @@ JWT.use('/:collection', limit() ,async (req,res)=>{
         .setExpirationTime("1h")
         .sign(encoder.encode(process.env.MEGAIRROMPLIBLE));
         //req.data = jwt;
+        // console.log(jwtconstructor);
         res.status(200).send({status:200, token:jwt});
     } catch (error) {
         res.status(404).send({status:404, message: error});
@@ -42,25 +43,21 @@ JWT.use('/:collection', limit() ,async (req,res)=>{
 }) 
 
 JWVerify.use(async(req,res,next)=>{
+    const { authorization } = req.headers;
+    // * console.log(authorization);
+    if(!authorization) return  res.status(400).send({status:404, message: "Token de autorizacion faltante"});
     try {
-        const { authorization } = req.headers;
-        // * console.log(authorization);
-        if(!authorization) return  res.status(400).send({status:404, message: "Token de autorizacion faltante"});
-        try {
-            const encoder = new TextEncoder();
-            const jwtData = await jwtVerify(
-                authorization,
-                encoder.encode(process.env.MEGAIRROMPLIBLE)
-            );
-            req.data = jwtData;
-            next();
-        } catch (error) {
-            res.status(498).send({status:498,Message:"Token caducado o contaminado"});
-        }
+        const encoder = new TextEncoder();
+        const jwtData = await jwtVerify(
+            authorization,
+            encoder.encode(process.env.MEGAIRROMPLIBLE)
+        );
+        req.data = jwtData;
+        next();
     } catch (error) {
+        res.status(498).send({status:498,Message:"Token caducado o contaminado"});
     }
 });
-
 
 export {
     JWT, 

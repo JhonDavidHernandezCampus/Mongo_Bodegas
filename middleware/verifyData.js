@@ -1,7 +1,6 @@
 import 'reflect-metadata';
 import { plainToClass, classToPlain } from "class-transformer";
 import { validate } from 'class-validator';
-import  { Bodegas } from './../controllerDTO/Bodegas.js';
 import { DTO } from './../controller/jwt.js';
 import  { Router }  from "express";
 

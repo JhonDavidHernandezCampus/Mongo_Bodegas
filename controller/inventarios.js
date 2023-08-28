@@ -8,7 +8,7 @@ let db = await conx();
 const inventarios = db.collection("inventarios");
 const bodegas = db.collection("bodegas");
 
-
+// *
 // 8. Realizar un EndPoint que permita insertar registros en la tabla de
 // inventarios, los parámetros de entrada deben ser
 // (id_producto,id_bodega,cantidad).
@@ -81,7 +81,6 @@ router.post('/insertar', limit(),ClassVerify, DTOData , async (req,res)=>{
     "cantidad":1
 }
 */
-
 
 router.put('/transladar', limit(), ClassVerify, async (req,res)=>{
     let datos = req.body;
