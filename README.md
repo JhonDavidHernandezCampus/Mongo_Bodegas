@@ -49,9 +49,9 @@ npm i -E -D mongodb
 `Nota`: Para el funcionamiento del api es necesario la creacion de un token diferente para cada coleccion
 - Ejemplo
 - Method = GET
-http://127.121.12.10:9110/token/:Nombre_de_coleccion
+http://127.121.12.6:9102/token/:Nombre_de_coleccion
 -Obtener el token para la colecion Bodegas
-http://127.121.12.10:9110/token/Bodegas
+http://127.121.12.6:9102/token/Bodegas
 
 
 Coleciones disponibles
