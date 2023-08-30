@@ -44,6 +44,26 @@ npm i -E -D mongodb
 
 // 
 
+# Datos y funcionamiento del api
+# !Importante
+`Nota`: Para el funcionamiento del api es necesario la creacion de un token diferente para cada coleccion
+- Ejemplo
+- Method = GET
+http://127.121.12.10:9110/token/:Nombre_de_coleccion
+-Obtener el token para la colecion Bodegas
+http://127.121.12.10:9110/token/Bodegas
+
+
+Coleciones disponibles
+```json
+{
+    "Bodegas":" Bodegas",
+    "Productos":" Productos",
+    "Inventarios":"Inventario"
+}
+```
+
+
 # Rutas creadas
 
 ### Rutas para la tabla bodegas 
